@@ -137,7 +137,6 @@
     <ClCompile Include="WindowManager.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Movement.h" />
     <ClInclude Include="setSnake.h" />
     <ClInclude Include="WindowManager.h" />
   </ItemGroup>

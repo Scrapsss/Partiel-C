@@ -32,8 +32,5 @@
     <ClInclude Include="setSnake.h">
       <Filter>Fichiers de ressources</Filter>
     </ClInclude>
-    <ClInclude Include="Movement.h">
-      <Filter>Fichiers de ressources</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
