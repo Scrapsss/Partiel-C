@@ -16,8 +16,6 @@ int Down = 0;
 int Left = 0;
 int Right = 0;
 
-Snake[50];
-
 void KeyDownCheck(SDL_Event event)
 {
     switch (event.key.keysym.sym)
@@ -99,7 +97,6 @@ int main()
 		SDL_Rect playerSnake = setSnake(playerX, playerY, 50, 50);
         SnakeManager();
         UpdatePos();
-        printf(sizeof(Snake));
 		SDL_RenderPresent(renderer);
 		SDL_Delay(100);
 	}
