@@ -10,19 +10,30 @@ void KeyDownCheck(SDL_Event event)
     {
     case SDLK_UP:
         Up = 1;
+        Down = 0;
+        Left = 0;
+        Right = 0;
         break;
     case SDLK_DOWN:
+        Up = 0;
         Down = 1;
+        Left = 0;
+        Right = 0;
         break;
     case SDLK_RIGHT:
+        Up = 0;
+        Down = 0;
+        Left = 0;
         Right = 1;
         break;
     case SDLK_LEFT:
+        Up = 0;
+        Down = 0;
         Left = 1;
+        Right = 0;
         break;
     }
 }
-
 
 void SnakeManager()
 {
@@ -40,6 +51,24 @@ void SnakeManager()
 
 void UpdatePos()
 {
+    if (playerY <= 0)
+    {
+        Up = 0;
+    }
+    else if (playerY + 50 >= 600)
+    {
+        Down = 0;
+    }
+
+    if (playerX <= 0)
+    {
+        Left = 0;
+    }
+    else if (playerX + 50 >= 1200)
+    {
+        Right = 0;
+    }
+
     playerX += playerDx * (Right - Left);
     playerY += playerDy * (Down - Up);
 }
@@ -54,11 +83,11 @@ int main()
 		ClearScreen();
 
 		
-		SDL_Rect playerSnake = setSnake(playerX, playerY, 50, 25);
+		SDL_Rect playerSnake = setSnake(playerX, playerY, 50, 50);
         SnakeManager();
         UpdatePos();
 		SDL_RenderPresent(renderer);
-		SDL_Delay(10);
+		SDL_Delay(100);
 	}
 
 	return 0;

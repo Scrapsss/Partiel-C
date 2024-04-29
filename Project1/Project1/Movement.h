@@ -5,8 +5,8 @@ int playerX = 100;
 int playerY = 300;
 
 // Déclaration de la vitesse du joueur
-int playerDx = 20;
-int playerDy = 20;
+int playerDx = 50;
+int playerDy = 50;
 
 int Up = 0;
 int Down = 0;
